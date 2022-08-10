@@ -12,7 +12,7 @@ def plot_async(sheet):
     y_array = []
     cat_array = []
 
-    catcols = [c for c in sheet.xcols if not isNumeric(c)]
+    catcols = [c for c in sheet.xcols if not vd.isNumeric(c)]
     numcols = graph.numericCols(vd, sheet.xcols)
     for rownum, row in enumerate(Progress(sheet.sourceRows, 'plotting')):  # rows being plotted from source
         for ycol in sheet.ycols:
