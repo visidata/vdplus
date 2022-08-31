@@ -3,7 +3,8 @@ FROM alpine:3.16
 RUN mkdir /app
 WORKDIR /app
 
-RUN apk update \
+RUN mkdir -p /etc/vd \
+    && apk update \
     && apk upgrade \
     && apk add --no-cache \
         mandoc \
@@ -43,6 +44,7 @@ RUN apk update \
     'git+https://github.com/visidata/vdsql.git' \
     && apk del go git build-base
 
+COPY ./visidatarc /etc/vd/visidatarc
 ENV PORT=9500
 ENV TERM=xterm-256color
 ENV EDITOR=nvim
