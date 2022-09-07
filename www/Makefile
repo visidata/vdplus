@@ -5,7 +5,7 @@ run: build
 
 build:
 	# TODO(cpcloud): remove --no-cache if we ever get off of HEAD of the things
-	docker build --no-cache --rm . -t vdwww:latest -t gcr.io/psp-sandbox/vdwww
+	docker build --rm . -t vdwww:latest -t gcr.io/psp-sandbox/vdwww
 
 push: build
 	docker push gcr.io/psp-sandbox/vdwww

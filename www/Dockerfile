@@ -10,6 +10,7 @@ RUN mkdir -p /etc/vd \
         mandoc \
         nano \
         neovim \
+        procps \
         py3-apache-arrow \
         py3-cachetools \
         py3-greenlet \
@@ -27,7 +28,6 @@ RUN mkdir -p /etc/vd \
         py3-requests \
         py3-toolz \
         py3-wheel \
-        procps \
         go \
         git \
     && git config --global advice.detachedHead false \
@@ -38,10 +38,10 @@ RUN mkdir -p /etc/vd \
     && cd /app \
     && rm -r /tmp/gotty /root/go \
     && pip install --no-cache-dir -U \
-    'git+https://github.com/ibis-project/ibis.git#egg=ibis-framework[clickhouse,duckdb,postgres,mysql,sqlite]' \
+    'git+https://github.com/ibis-project/ibis.git@adb620e559dc0892959f58c44923d19461ec2e5b#egg=ibis-framework[clickhouse,duckdb,postgres,mysql,sqlite]' \
     'git+https://github.com/cpcloud/ibis-bigquery.git@unconstrain-pyarrow' \
-    'git+https://github.com/saulpw/visidata.git' \
-    'git+https://github.com/visidata/vdsql.git' \
+    'git+https://github.com/saulpw/visidata.git@3ffb5ea4c002bee1dc57f612209507f5d8a53a87' \
+    'git+https://github.com/visidata/vdsql.git@b7698b408754daee2696dcce6ea21064133ee69f' \
     && apk del go git
 
 COPY ./visidatarc /etc/vd/visidatarc
