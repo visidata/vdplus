@@ -35,6 +35,7 @@ RUN mkdir -p /etc/vd \
     && cd /tmp/gotty \
     && go mod init && go get && go mod vendor && go build \
     && cp ./gotty /app \
+    && cd /app \
     && rm -r /tmp/gotty /root/go \
     && pip install --no-cache-dir -U \
     'git+https://github.com/ibis-project/ibis.git#egg=ibis-framework[clickhouse,duckdb,postgres,mysql,sqlite]' \
