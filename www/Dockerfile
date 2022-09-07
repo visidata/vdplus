@@ -41,7 +41,7 @@ RUN mkdir -p /etc/vd \
     'git+https://github.com/ibis-project/ibis.git@adb620e559dc0892959f58c44923d19461ec2e5b#egg=ibis-framework[clickhouse,duckdb,postgres,mysql,sqlite]' \
     'git+https://github.com/cpcloud/ibis-bigquery.git@unconstrain-pyarrow' \
     'git+https://github.com/saulpw/visidata.git@3ffb5ea4c002bee1dc57f612209507f5d8a53a87' \
-    'git+https://github.com/visidata/vdsql.git@b7698b408754daee2696dcce6ea21064133ee69f' \
+    'git+https://github.com/cpcloud/vdsql.git@fix-bq' \
     && apk del go git
 
 COPY ./visidatarc /etc/vd/visidatarc
