@@ -1,6 +1,8 @@
 # VisiData Plus
 
-VisiData Plus contains many useful loaders and features for [VisiData](https://visidata.org).
+VisiData Plus contained many useful loaders and features for [VisiData](https://visidata.org).
+
+## In 2023, all VisiData Plus features were integrated into the main [saulpw/visidata](https://github.com/saulpw/visidata) codebase.
 
 ### APIs
 
